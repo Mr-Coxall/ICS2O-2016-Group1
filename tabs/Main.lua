@@ -23,10 +23,17 @@ function setup()
     pushStyle()    
     
     -- create the scenes
+<<<<<<< HEAD
     Scene("CompanyLogoScene", CompanyLogoScene)
     Scene("GameLogoScene", GameLogoScene)
     
     Scene.Change("CompanyLogoScene")
+=======
+    Scene("companyLogoScene", CompanyLogoScene)
+    -- delete this line and add in the rest of your scenes
+    
+    Scene.Change("companyLogoScene")
+>>>>>>> master
 end
 
 -- This function gets called once every frame
