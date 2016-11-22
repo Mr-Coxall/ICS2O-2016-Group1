@@ -22,18 +22,10 @@ function setup()
     noStroke()
     pushStyle()    
     
-    -- create the scenes
-<<<<<<< HEAD
-    Scene("CompanyLogoScene", CompanyLogoScene)
-    Scene("GameLogoScene", GameLogoScene)
-    
-    Scene.Change("CompanyLogoScene")
-=======
     Scene("companyLogoScene", CompanyLogoScene)
     Scene("gameLogoScene", GameLogoScene)
     
     Scene.Change("companyLogoScene")
->>>>>>> master
 end
 
 -- This function gets called once every frame
