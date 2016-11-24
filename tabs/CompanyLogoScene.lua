@@ -34,7 +34,7 @@ function CompanyLogoScene:draw()
     
     -- Do your drawing here
     if(startTime + 2 < ElapsedTime)then 
-        Scene. Change("GameLogoScene")
+        Scene.Change("gameLogoScene")
     end
     
 end
