@@ -1,19 +1,20 @@
 -- ICS2O-2016-Group1
--- CompanyLogoScene
+-- GameMenuScene
 
--- Created by: Mr. Coxall
+-- Created by: Luke Jeon
 -- Created on: Nov-2016
 -- Created for: ICS2O
 -- This is the project for Group #1-2016
--- This is the first scene to show up, the company logo.
+-- This is the third scene to show up, the game menu.
 
-CompanyLogoScene = class()
+GameMenuScene = class()
 
 -- local variables to this scene
-local startTime
+
+
 
 -- Use this function to perform your initial setup for this scene
-function CompanyLogoScene:init()
+function GameMenuScene:init()
     -- set up display options
     noFill()
     noSmooth()
@@ -21,26 +22,23 @@ function CompanyLogoScene:init()
     pushStyle()  
     
     -- scene setup code here
-    startTime = ElapsedTime
     
 end
 
-function CompanyLogoScene:draw()
+function GameMenuScene:draw()
     -- Codea does not automatically call this method
     
-    background(255, 0, 0, 255)
-    sprite("Project:CompanyBackground", WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
+    background(0, 0, 0, 255)
+    sprite("Dropbox:Blue Settings Button", vec2(WIDTH/9, HEIGHT/9))
     
     -- Do your drawing here
-    if(startTime + 2 < ElapsedTime)then 
-        Scene.Change("gameLogoScene")
-    end
-    
+
 end
 
-function CompanyLogoScene:touched(touch)
+function GameMenuScene:touched(touch)
     -- Codea does not automatically call this method
     
     -- Do your touch code here
+
     
 end
