@@ -35,6 +35,7 @@ function World1Scene:touched(touch)
     world1level3Button:touched(touch)
     world1level4Button:touched(touch)
     world1level5Button:touched(touch)
+    sprite("")
     
 end
 
