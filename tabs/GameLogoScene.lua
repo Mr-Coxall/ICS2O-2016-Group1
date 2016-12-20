@@ -8,6 +8,7 @@
 -- This is the second scene to show up, the game logo.
 
 GameLogoScene = class()
+--sprite("Project:GameBackground")
 
 -- local variables to this scene
 local startTime

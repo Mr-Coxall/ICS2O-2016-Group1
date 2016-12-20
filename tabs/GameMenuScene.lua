@@ -1,44 +1,65 @@
--- ICS2O-2016-Group1
--- GameMenuScene
+-- Lesson 5
 
--- Created by: Luke Jeon
--- Created on: Nov-2016
--- Created for: ICS2O
--- This is the project for Group #1-2016
--- This is the third scene to show up, the game menu.
+-- By: Luke Jeon
+-- Created November 2016
+-- Created for ICS2O
+-- This program displays a button and tells the user when it is selected
+
+-- Local variables
+local settingsButton
+local playButton
+local shopButton
+local achievmentButton
 
 GameMenuScene = class()
 
--- local variables to this scene
-
-
-
--- Use this function to perform your initial setup for this scene
 function GameMenuScene:init()
-    -- set up display options
+     -- set up display options
     noFill()
     noSmooth()
     noStroke()
-    pushStyle()  
+    pushStyle() 
     
-    -- scene setup code here
+    settingsButton = Button("Project:Blue Settings Button", vec2(WIDTH/21, HEIGHT/15))
+    playButton = Button("Project:Blue Move Scene Forward Button", vec2(WIDTH/2, HEIGHT/2))
+    shopButton = Button("Project:shopImage", vec2(WIDTH/2, HEIGHT/15))
+    achievmentButton = Button("Project:Star Filled", vec2(WIDTH/1.0426, HEIGHT/20))
     
+end 
+
+function GameMenuScene:touched(touch)
+
+    settingsButton:touched(touch)
+    playButton:touched(touch)
+    shopButton:touched(touch)
+    achievmentButton:touched(touch)
+    
+    if(playButton.selected == true) then
+        Scene.Change("worldSelection")
+    end
+    if(achievmentButton.selected == true) then
+        Scene.Change("achievments")
+    end
+    if(settingsButton.selected == true) then
+        Scene.Change("settings")
+    end
+    if(shopButton.selected == true) then
+        Scene.Change("characterShop")
+    end
 end
 
 function GameMenuScene:draw()
     -- Codea does not automatically call this method
     
-    background(0, 0, 0, 255)
-    sprite("Dropbox:Blue Settings Button", vec2(WIDTH/9, HEIGHT/9))
+    background(62, 158, 57, 255)
+    --sprite("Project:Blue Move Scene Forward Button", WIDTH/18.9, HEIGHT/10, 100)
+    --sprite("Project:Blue Settings Button", WIDTH/18.9, HEIGHT/10, 100)
+    --sprite("Project:shopImage", WIDTH/18.9/ HEIGHT/10, 100)
+    --sprite("Project:Star Filled", WIDTH/9.4 HEIGHT/9, 100) 
+    settingsButton:draw()
+    playButton:draw()
+    shopButton:draw()
+    achievmentButton:draw()
     
-    -- Do your drawing here
-
-end
-
-function GameMenuScene:touched(touch)
-    -- Codea does not automatically call this method
-    
-    -- Do your touch code here
-
     
 end

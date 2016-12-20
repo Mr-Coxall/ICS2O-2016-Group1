@@ -8,6 +8,7 @@
 -- This is the first scene to show up, the company logo.
 
 CompanyLogoScene = class()
+--sprite("Project:CompanyBackground")
 
 -- local variables to this scene
 local startTime
