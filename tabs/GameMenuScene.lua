@@ -20,10 +20,10 @@ function GameMenuScene:init()
     noStroke()
     pushStyle() 
     
-    settingsButton = Button("Project:Blue Settings Button", vec2(WIDTH/21, HEIGHT/15))
-    playButton = Button("Project:Blue Move Scene Forward Button", vec2(WIDTH/2, HEIGHT/2))
-    shopButton = Button("Project:shopImage", vec2(WIDTH/2, HEIGHT/15))
-    achievmentButton = Button("Project:Star Filled", vec2(WIDTH/1.0426, HEIGHT/20))
+    settingsButton = Button("Dropbox:Blue Settings Button", vec2(WIDTH/21, HEIGHT/15))
+    playButton = Button("Dropbox:Blue Move Scene Forward Button", vec2(WIDTH/2, HEIGHT/2))
+    shopButton = Button("Dropbox:shopImage", vec2(WIDTH/2, HEIGHT/15))
+    achievmentButton = Button("Dropbox:Star Filled", vec2(WIDTH/1.0426, HEIGHT/20))
     
 end 
 

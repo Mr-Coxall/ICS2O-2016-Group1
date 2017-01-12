@@ -17,7 +17,7 @@ function SettingsScene:init()
     noStroke()
     pushStyle() 
     
-    backButton = Button("Project:Blue Back Circle Button", vec2(WIDTH/20.4, HEIGHT/15))
+    backButton = Button("Dropbox:Blue Back Circle Button", vec2(WIDTH/20.4, HEIGHT/15))
 end 
 
 function SettingsScene:touched(touch)

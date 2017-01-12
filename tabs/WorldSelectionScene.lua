@@ -19,9 +19,9 @@ function WorldSelectionScene:init()
     noStroke()
     pushStyle() 
 
-    world1Button = Button("Project:Title Large Crate 1", vec2(WIDTH/3, HEIGHT/2))
-    world2Button = Button("Project:Title Large Crate 2", vec2(WIDTH/2, HEIGHT/2))
-    world3Button = Button("Project:Title Large Crate 3", vec2(WIDTH/1.5, HEIGHT/2))
+    world1Button = Button("Dropbox:Title Large Crate 1", vec2(WIDTH/3, HEIGHT/2))
+    world2Button = Button("Dropbox:Title Large Crate 2", vec2(WIDTH/2, HEIGHT/2))
+    world3Button = Button("Dropbox:Title Large Crate 3", vec2(WIDTH/1.5, HEIGHT/2))
     
 end 
 
