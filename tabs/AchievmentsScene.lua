@@ -8,9 +8,9 @@
 -- Local variables
 local backButton
 
-CharacterShopScene = class()
+AchievmentsScene = class()
 
-function CharacterShopScene:init()
+function AchievmentsScene:init()
      -- set up display options
     noFill()
     noSmooth()
@@ -21,7 +21,7 @@ function CharacterShopScene:init()
     
 end
 
-function CharacterShopScene:touched(touch)
+function AchievmentsScene:touched(touch)
 
     backButton:touched(touch)
     
@@ -30,7 +30,7 @@ function CharacterShopScene:touched(touch)
     end
 end
 
-function CharacterShopScene:draw()
+function AchievmentsScene:draw()
     -- Codea does not automatically call this method
     
     sprite("Dropbox:Opening Background", WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
@@ -42,6 +42,6 @@ function CharacterShopScene:draw()
     fill(0, 0, 0, 255)
     fontSize(60)
     font("AmericanTypewriter")
-    text("Shop", WIDTH/2, HEIGHT/1.1)
-    
+    text("Achievement", WIDTH/2, HEIGHT/1.1)
+   
 end
