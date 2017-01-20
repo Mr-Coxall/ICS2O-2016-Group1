@@ -43,5 +43,5 @@ function AchievmentsScene:draw()
     fontSize(60)
     font("AmericanTypewriter")
     text("Achievement", WIDTH/2, HEIGHT/1.1)
-    
+   
 end

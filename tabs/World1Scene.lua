@@ -88,5 +88,4 @@ function World1Scene:draw()
     fontSize(55)
     font("AmericanTypewriter")
     text("World 1", WIDTH/2, HEIGHT/1.1)
-
 end
