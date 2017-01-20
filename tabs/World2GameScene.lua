@@ -1,14 +1,14 @@
-GameCenterLoginScene = class()
+World2GameScene = class()
 
-function GameCenterLoginScene:init(x)
+function World2GameScene:init(x)
     -- you can accept and set parameters here
     self.x = x
 end
 
-function GameCenterLoginScene:draw()
+function World2GameScene:draw()
     -- Codea does not automatically call this method
 end
 
-function GameCenterLoginScene:touched(touch)
+function World2GameScene:touched(touch)
     -- Codea does not automatically call this method
 end
