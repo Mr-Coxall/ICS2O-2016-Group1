@@ -12,10 +12,15 @@
 		<string>GameMenuScene</string>
 		<string>SettingsScene</string>
 		<string>CharacterShopScene</string>
+		<string>AchievmentsScene</string>
 		<string>WorldSelectionScene</string>
 		<string>World1Scene</string>
 		<string>World2Scene</string>
 		<string>World3Scene</string>
+		<string>World1GameScene</string>
+		<string>World2GameScene</string>
+		<string>World3GameScene</string>
+		<string>GameCenterLoginScene</string>
 		<string>ResetGameScene</string>
 		<string>CreditsScene</string>
 		<string>Help1Scene</string>
