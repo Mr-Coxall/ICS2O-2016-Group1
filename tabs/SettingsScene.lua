@@ -29,8 +29,13 @@ end
 
 function SettingsScene:draw()
     -- Codea does not automatically call this method
-    background(48, 251, 1, 255)
+    sprite("Dropbox:Opening Background", WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
     --sprite("Project:Blue Back Circle Button")
+    
     backButton:draw()
+    fill(31, 27, 27, 255)
+    fontSize(60)
+    font("AmericanTypewriter")
+    text("Settings", WIDTH/2, HEIGHT/1.1)
     
 end
