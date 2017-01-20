@@ -17,7 +17,7 @@ function SettingsScene:init()
     noStroke()
     pushStyle() 
     
-    backButton = Button("Project:Blue Back Circle Button", vec2(WIDTH/20.4, HEIGHT/15))
+    backButton = Button("Dropbox:Blue Level Menu Button", vec2(WIDTH/13.5, HEIGHT/1.1))
 end 
 
 function SettingsScene:touched(touch)
@@ -29,8 +29,13 @@ end
 
 function SettingsScene:draw()
     -- Codea does not automatically call this method
-    background(48, 251, 1, 255)
+    sprite("Dropbox:Opening Background", WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
     --sprite("Project:Blue Back Circle Button")
+    
     backButton:draw()
+    fill(31, 27, 27, 255)
+    fontSize(60)
+    font("AmericanTypewriter")
+    text("Settings", WIDTH/2, HEIGHT/1.1)
     
 end
