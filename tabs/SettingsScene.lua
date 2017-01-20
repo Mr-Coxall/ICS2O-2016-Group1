@@ -27,20 +27,19 @@ function SettingsScene:init()
    -- scene setup code here
    -- sprite("Dropbox:Blue Back Rectangle Button")
    -- gameCenterButton = Button("", vec2(WIDTH/2, HEIGHT/2))
-    sprite("Documents:Gold")
-    gameCenterButton =  Button("Documents:Gold", vec2(WIDTH/2, HEIGHT/1.5))
-    helpButton = Button("Documents:Gold", vec2(WIDTH/2, HEIGHT/2))
-    aboutUsButton = Button("Documents:Gold", vec2(WIDTH/2, HEIGHT/3))
-    resetButton = Button("Documents:Gold", vec2(WIDTH/2, HEIGHT/6))
-   -- homeButton = Button("Dropbox:Blue Back Rectangle Button",
-vec2(WIDTH/10, HEIGHT/1.21))
+    --sprite("Documents:Gold")
+    gameCenterButton =  Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/1.5))
+    helpButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/2))
+    aboutUsButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/3))
+    resetButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/6))
+   -- homeButton = Button("Dropbox:Blue Back Rectangle Button",vec2(WIDTH/10, HEIGHT/1.21))
 end
 
 function SettingsScene:draw()
     -- Codea does not automatically call this method
 
     background(255, 255, 255, 255)
-    sprite("Cargo Bot:Game Lower BG",WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
+    sprite("Dropbox:Game Lower BG",WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
    -- gameCenterButton:draw()
     gameCenterButton:draw()
     helpButton:draw()
