@@ -14,6 +14,8 @@ DEBUG_GAMECENTER = true
 
 -- Global variables to the entire project
 
+candy = 0
+
 -- local variables to this scene
 
 
@@ -40,6 +42,9 @@ function setup()
     Scene("world1GameScene", World1GameScene)
     Scene("world2GameScene", World2GameScene)
     Scene("world3GameScene", World3GameScene)
+    Scene("gameScoreScene1", GameScoreScene1)
+    Scene("gameScoreScene2", GameScoreScene2)
+    Scene("gameScoreScene3", GameScoreScene3)
     Scene("gameCenterLogin" , GameCenterLoginScene)
     Scene("resetGame" , ResetGameScene)
     Scene("credits" , CreditsScene)
