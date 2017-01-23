@@ -11,7 +11,6 @@
 		<string>GameLogoScene</string>
 		<string>GameMenuScene</string>
 		<string>SettingsScene</string>
-		<string>ResetGameScene</string>
 		<string>CharacterShopScene</string>
 		<string>AchievmentsScene</string>
 		<string>WorldSelectionScene</string>
@@ -21,9 +20,10 @@
 		<string>World1GameScene</string>
 		<string>World2GameScene</string>
 		<string>World3GameScene</string>
-		<string>CreditsScene</string>
 		<string>Help1Scene</string>
 		<string>Help2Scene</string>
+		<string>CreditsScene</string>
+		<string>ResetGameScene</string>
 		<string>GameScoreScene</string>
 		<string>WrongScene</string>
 		<string>HelperClass</string>

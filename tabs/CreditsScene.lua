@@ -26,7 +26,7 @@ function CreditsScene:touched(touch)
          backButton:touched(touch)
 
          if(backButton.selected == true) then
-            Scene.Change("setting")
+            Scene.Change("settings")
             yPosition = HEIGHT/9.1 - 100
 
          end
