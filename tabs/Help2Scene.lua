@@ -27,7 +27,7 @@ function HelpScene2:touched(touch)
 
     -- Codea does not automatically call this method
     if(backButton.selected == true) then
-        Scene.Change("setting")
+        Scene.Change("settings")
     elseif(moveBackButton.selected == true) then
         Scene.Change("help1")
     end

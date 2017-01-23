@@ -6,9 +6,9 @@ local yesButton
 local backButton
 
 function ResetGameScene:init()
-sprite("Cargo Bot:Condition Red")
-noButton = Button("Cargo Bot:Condition Red", vec2(WIDTH/1.2, HEIGHT/2))   
-yesButton = Button("Cargo Bot:Condition Green", vec2(WIDTH/5.8, HEIGHT/2))   
+sprite("Dropbox:Condition Green")
+noButton = Button("Dropbox:Condition Red", vec2(WIDTH/1.2, HEIGHT/2))   
+yesButton = Button("Dropbox:Condition Green", vec2(WIDTH/5.8, HEIGHT/2))   
 backButton = Button("Dropbox:Blue Move Scene Back Button", vec2(WIDTH/20, HEIGHT/1.07))  
 end
 
@@ -34,10 +34,10 @@ function ResetGameScene:touched(touch)
    backButton:touched(touch)
 
        if(backButton.selected == true) then
-   Scene.Change("setting")
+   Scene.Change("settings")
 
        elseif(noButton.selected == true) then
-   Scene.Change("setting")
+   Scene.Change("settings")
 
         end
 end

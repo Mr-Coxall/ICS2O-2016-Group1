@@ -29,7 +29,7 @@ function HelpScene1:touched(touch)
     backButton:touched(touch)
 
     if(backButton.selected == true) then
-        Scene.Change("setting")
+        Scene.Change("settings")
     elseif(moveForwardButton.selected == true) then
         Scene.Change("help2")
     end
