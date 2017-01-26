@@ -9,7 +9,6 @@
 local world1Button
 local world2Button
 local world3Button
-local settingButton
 local homeButton
 
 
@@ -25,7 +24,6 @@ function WorldSelectionScene:init()
     world1Button = Button("Dropbox:world1", vec2(WIDTH/5, HEIGHT/2))
     world2Button = Button("Dropbox:world2", vec2(WIDTH/2, HEIGHT/2))
     world3Button = Button("Dropbox:world3", vec2(WIDTH/1.25, HEIGHT/2))
-    settingButton = Button("Dropbox:Blue Settings Button", vec2(WIDTH/1.08, HEIGHT/1.1))
     homeButton = Button("Dropbox:Blue Level Menu Button", vec2(WIDTH/12.5, HEIGHT/1.1))
 end 
 
@@ -33,7 +31,6 @@ function WorldSelectionScene:touched(touch)
     world1Button:touched(touch)
     world2Button:touched(touch)
     world3Button:touched(touch)
-    settingButton:touched(touch)
     homeButton:touched(touch)
     
     if(world1Button.selected == true) then
@@ -44,9 +41,6 @@ function WorldSelectionScene:touched(touch)
     end
     if(world3Button.selected == true) then
         Scene.Change("world3")
-     end
-    if(settingButton.selected == true) then
-        Scene.Change("settings")
     end
     if(homeButton.selected == true) then
         Scene.Change("gameMenu")
@@ -63,7 +57,6 @@ function WorldSelectionScene:draw()
     world1Button:draw()
     world2Button:draw()
     world3Button:draw()
-    settingButton:draw()
     homeButton:draw()
     
     fill(0, 0, 0, 255)
@@ -74,5 +67,4 @@ function WorldSelectionScene:draw()
     text("World 2", WIDTH/2, HEIGHT/4)
     text("World 3", WIDTH/1.25, HEIGHT/4)
     text("World Select", WIDTH/2, HEIGHT/1.2)
-
 end

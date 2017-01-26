@@ -48,8 +48,8 @@ function setup()
     Scene("gameCenterLogin" , GameCenterLoginScene)
     Scene("resetGame" , ResetGameScene)
     Scene("credits" , CreditsScene)
-    Scene("help1" , Help1Scene)
-    Scene("help2" , Help2Scene)
+    Scene("help1" , HelpScene1)
+    Scene("help2" , HelpScene2)
     
     Scene.Change("companyLogoScene")
 end

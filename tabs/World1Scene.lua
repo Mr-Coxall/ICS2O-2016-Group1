@@ -69,7 +69,7 @@ end
 function World1Scene:draw()
     -- Codea does not automatically call this method
     
-    sprite("Dropbox:Background Fade", WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
+    background(0, 0, 0, 255)
     --sprite("Project:Program 1")
     --sprite("Project:Program 2")
     --sprite("Project:Program 3")
