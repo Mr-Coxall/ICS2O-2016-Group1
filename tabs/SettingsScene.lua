@@ -15,6 +15,7 @@ local gameCenterButton
 local helpButton
 local aboutUsButton
 local resetButton
+local backButton
 --local homeButton
 -- Use this function to perform your initial setup for this scene
 function SettingsScene:init()
@@ -32,6 +33,7 @@ function SettingsScene:init()
     helpButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/2))
     aboutUsButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/3))
     resetButton = Button("Dropbox:Gold", vec2(WIDTH/2, HEIGHT/6))
+    backButton = Button("Dropbox:Blue Move Scene Back Button", vec2(WIDTH/20, HEIGHT/1.07))
    -- homeButton = Button("Dropbox:Blue Back Rectangle Button",vec2(WIDTH/10, HEIGHT/1.21))
 end
 
@@ -41,16 +43,17 @@ function SettingsScene:draw()
     background(255, 255, 255, 255)
     sprite("Dropbox:Game Lower BG",WIDTH/2, HEIGHT/2, WIDTH, HEIGHT)
    -- gameCenterButton:draw()
-    gameCenterButton:draw()
-    helpButton:draw()
+    --gameCenterButton:draw()
+    --helpButton:draw()
     aboutUsButton:draw()
     resetButton:draw()
+    backButton:draw()
   --  homeButton:draw()
     fill(0, 0, 0, 255)
     fontSize(30)
     font("AmericanTypewriter")
-    text("Game Center", WIDTH/2, HEIGHT/1.5)
-    text("Help", WIDTH/2, HEIGHT/2)
+    --text("Game Center", WIDTH/2, HEIGHT/1.5)
+    --text("Help", WIDTH/2, HEIGHT/2)
     text("About us",WIDTH/2, HEIGHT/3)
     text("Reset", WIDTH/2, HEIGHT/6)
     -- Do your drawing here
@@ -60,29 +63,32 @@ end
 
 function SettingsScene:touched(touch)
 
-        gameCenterButton:touched(touch)
-        helpButton:touched(touch)
-        aboutUsButton:touched(touch)
-        resetButton:touched(touch)
-     --homeButton:touched(touch)
+    --gameCenterButton:touched(touch)
+    --helpButton:touched(touch)
+    aboutUsButton:touched(touch)
+    resetButton:touched(touch)
+    backButton:touched(touch)
+    --homeButton:touched(touch)
 
-        if(resetButton.selected == true) then
-        Scene.Change("reset")
+    if(resetButton.selected == true) then
+        Scene.Change("resetGame")
 
-           elseif (helpButton.selected == true) then
-          Scene.Change("help1")
+    elseif (helpButton.selected == true) then
+        Scene.Change("help1")
 
-                 elseif(aboutUsButton.selected == true) then
-                       Scene.Change("credits")
+    elseif(aboutUsButton.selected == true) then
+        Scene.Change("credits")
+    elseif(backButton.selected == true) then
+        Scene.Change("gameMenu")
+    end
+
+    if (gameCenterButton.selected == true) then
+        -- always check to ensure Game Center is logged in
+        -- before doing a command, or the player will
+        -- get anoying warnings!
+        if (gamecenter.enabled() == true) then
+            gamecenter.showLeaderboards()
         end
+    end
 
-                    if (gameCenterButton.selected == true) then
-                       -- always check to ensure Game Center is logged in
-                       -- before doing a command, or the player will
-                       -- get anoying warnings!
-                            if (gamecenter.enabled() == true) then
-                             gamecenter.showLeaderboards()
-                            end
-                     end
-
-            end
+end

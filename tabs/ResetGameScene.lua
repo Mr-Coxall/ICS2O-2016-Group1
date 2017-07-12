@@ -6,10 +6,10 @@ local yesButton
 local backButton
 
 function ResetGameScene:init()
-sprite("Dropbox:Condition Green")
-noButton = Button("Dropbox:Condition Red", vec2(WIDTH/1.2, HEIGHT/2))   
-yesButton = Button("Dropbox:Condition Green", vec2(WIDTH/5.8, HEIGHT/2))   
-backButton = Button("Dropbox:Blue Move Scene Back Button", vec2(WIDTH/20, HEIGHT/1.07))  
+    sprite("Dropbox:Condition Green")
+    noButton = Button("Dropbox:Condition Red", vec2(WIDTH/1.2, HEIGHT/2))   
+    yesButton = Button("Dropbox:Condition Green", vec2(WIDTH/5.8, HEIGHT/2))   
+    backButton = Button("Dropbox:Blue Move Scene Back Button", vec2(WIDTH/20, HEIGHT/1.07))  
 end
 
 function ResetGameScene:draw()
@@ -22,7 +22,7 @@ function ResetGameScene:draw()
    fill(0, 0, 0, 255)
    fontSize(30)
    font("AmericanTypewriter")
-   text("Are you sure you want to reset the game?", WIDTH/2, HEIGHT/1.5)
+   text("Are you sure you want to reset the game and set your points to 0?", WIDTH/2, HEIGHT/1.5)
    text("yes", WIDTH/5.8, HEIGHT/2)
    text("No", WIDTH/1.2, HEIGHT/2)
 end
@@ -33,11 +33,13 @@ function ResetGameScene:touched(touch)
    noButton:touched(touch)  
    backButton:touched(touch)
 
-       if(backButton.selected == true) then
-   Scene.Change("settings")
-
-       elseif(noButton.selected == true) then
-   Scene.Change("settings")
-
-        end
+    if(backButton.selected == true) then
+        Scene.Change("settings")
+    elseif(noButton.selected == true) then
+        Scene.Change("settings")
+    elseif(yesButton.selected == true) then
+        speech.say("Your score has been returned to 0.")
+        points = 0
+        Scene.Change("settings")
+    end
 end

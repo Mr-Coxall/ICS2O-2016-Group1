@@ -32,8 +32,8 @@ function GameMenuScene:touched(touch)
 
     settingsButton:touched(touch)
     playButton:touched(touch)
-    shopButton:touched(touch)
-    achievmentButton:touched(touch)
+    --shopButton:touched(touch)
+    --achievmentButton:touched(touch)
     
     if(playButton.selected == true) then
         Scene.Change("worldSelection")
@@ -52,15 +52,15 @@ end
 function GameMenuScene:draw()
     -- Codea does not automatically call this method
     
-    sprite("Dropbox:Opening Crates", WIDTH/2, HEIGHT/3.4, WIDTH, HEIGHT)
+    --sprite("Dropbox:Opening Crates", WIDTH/2, HEIGHT/3.4, WIDTH, HEIGHT)
     --sprite("Project:Blue Move Scene Forward Button", WIDTH/18.9, HEIGHT/10, 100)
     --sprite("Project:Blue Settings Button", WIDTH/18.9, HEIGHT/10, 100)
     --sprite("Project:shopImage", WIDTH/18.9/ HEIGHT/10, 100)
     --sprite("Project:Star Filled", WIDTH/9.4 HEIGHT/9, 100) 
     settingsButton:draw()
     playButton:draw()
-    shopButton:draw()
-    achievmentButton:draw()
+    --shopButton:draw()
+    --achievmentButton:draw()
     
     sprite("Dropbox:Title Large Crate 1", WIDTH/3, yPosition)
     sprite("Dropbox:Title Large Crate 2", WIDTH/1.6, yPosition + 100)
@@ -78,8 +78,5 @@ function GameMenuScene:draw()
     font("AmericanTypewriter")
     text("Math Lands", WIDTH/2, HEIGHT/1.2)
     fontSize(40)
-    text("Shop", WIDTH/2, HEIGHT/10)
-    
-    
-    
+    --text("Shop", WIDTH/2, HEIGHT/10)    
 end
