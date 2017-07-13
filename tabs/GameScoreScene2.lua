@@ -9,7 +9,7 @@ local home
 local redoButton 
 local nextLevelButton
 candy = 0
-points = 0
+--points = 0
 
 GameScoreScene2 = class()
 
@@ -30,7 +30,7 @@ function GameScoreScene2:draw()
     font("Verdana-Bold") 
     pushStyle()
     
-    text("Level Complete!", WIDTH/2, HEIGHT/1.12)
+    text("Correct Answer!", WIDTH/2, HEIGHT/1.12)
     popStyle()
     
     fill(0, 0, 0, 255)
@@ -39,32 +39,32 @@ function GameScoreScene2:draw()
     pushStyle()
     
     text("Score: "..points , WIDTH/2, HEIGHT/1.45)
-    text("Candy: ".."+"..math.floor (candy) , WIDTH/2, HEIGHT /2)
+    --text("Candy: ".."+"..math.floor (candy) , WIDTH/2, HEIGHT /2)
     
-    home:draw()
-    redoButton:draw()
+    --home:draw()
+    --redoButton:draw()
     nextLevelButton:draw()
     
 end
 
 function GameScoreScene2:touched(touch)
     
-    home:touched(touch)
-    redoButton:touched(touch)
+    --home:touched(touch)
+    --redoButton:touched(touch)
     nextLevelButton:touched(touch)
     
     if(home.selected == true) then
-    points = 0
-    Scene.Change("gameMenu")
+        --points = 0
+        Scene.Change("gameMenu")
     end
         
     if(redoButton.selected == true) then
-    points = 0
-    Scene.Change("worldSelection")
+        --points = 0
+        Scene.Change("worldSelection")
     end 
    
     if(nextLevelButton.selected == true) then
-    points = 0
-    Scene.Change("world2GameScene")
+        --points = 0
+        Scene.Change("world2GameScene")
     end
 end

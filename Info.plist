@@ -23,10 +23,12 @@
 		<string>WrongAnswerScene1</string>
 		<string>World2GameScene</string>
 		<string>GameScoreScene2</string>
+		<string>WrongAnswerScene2</string>
 		<string>World3GameScene</string>
+		<string>GameScoreScene3</string>
+		<string>WrongAnswerScene3</string>
 		<string>Help1Scene</string>
 		<string>Help2Scene</string>
-		<string>GameScoreScene3</string>
 		<string>CreditsScene</string>
 		<string>WrongScene</string>
 		<string>HelperClass</string>

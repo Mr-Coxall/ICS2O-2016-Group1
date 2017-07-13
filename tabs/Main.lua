@@ -15,6 +15,7 @@ DEBUG_GAMECENTER = true
 -- Global variables to the entire project
 
 candy = 0
+points = 0
 
 -- local variables to this scene
 
@@ -23,7 +24,7 @@ candy = 0
 function setup()
     -- set up display options
     supportedOrientations(LANDSCAPE_ANY)
-    displayMode(FULLSCREEN)
+    displayMode(FULLSCREEN_NO_BUTTONS)
     noFill()
     noSmooth()
     noStroke()
@@ -43,9 +44,11 @@ function setup()
     Scene("world2GameScene", World2GameScene)
     Scene("world3GameScene", World3GameScene)
     Scene("gameScoreScene1", GameScoreScene1)
-    Scene("wrongAnswerScene1", WrongAnswerScene1)
     Scene("gameScoreScene2", GameScoreScene2)
     Scene("gameScoreScene3", GameScoreScene3)
+    Scene("wrongAnswerScene1", WrongAnswerScene1)
+    Scene("wrongAnswerScene2", WrongAnswerScene2)
+    Scene("wrongAnswerScene3", WrongAnswerScene3)
     Scene("gameCenterLogin" , GameCenterLoginScene)
     Scene("resetGame" , ResetGameScene)
     Scene("credits" , CreditsScene)

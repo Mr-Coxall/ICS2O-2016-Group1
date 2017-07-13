@@ -90,7 +90,7 @@ function World3GameScene:init()
     button9 = SpriteObject("Dropbox:9", vec2(WIDTH/1.057, HEIGHT/14))
     button9.draggable = true
     
-    home = Button("Dropbox:Blue Pause Button", vec2(WIDTH/20.5, HEIGHT/1.07), 1)
+    home = Button("Dropbox:Blue Back Circle Button", vec2(WIDTH/20.5, HEIGHT/1.07), 1)
     hint = Button("Dropbox:Blue Question Button", vec2(WIDTH/1.0529, HEIGHT/4.7), 1)
     
     randomNumber1 = math.random(5,9)
@@ -107,6 +107,7 @@ function World3GameScene:init()
     
     pauseTimer = nil
     justMadeChoice = false
+    gameTime = 11
 
 end
 
@@ -152,14 +153,14 @@ function World3GameScene:draw()
     font("HelveticaNeue-CondensedBlack") 
     pushStyle()
     
-    gameTime = gameTime+DeltaTime
-    if (gameTime < 60) then
+    gameTime = gameTime - DeltaTime
+    --if (gameTime < 60) then
        text("Time: "..tostring(math.floor(gameTime/1)), WIDTH/2, HEIGHT/1.04)
        fill(10, 47, 219, 255)
        fontSize(42)
        font("HelveticaNeue-CondensedBlack")
        text("Place ".. randomNumber1.. " - "..randomNumber2.." in the "..randomValue.." place", WIDTH/2, HEIGHT/1.25)
-    end
+    --end
 
     --[[  
         if (hundredsValue ~= nil) then
@@ -198,7 +199,7 @@ function World3GameScene:draw()
     
         --]]
     
-        if(gameTime > 61) then
+        if(gameTime < 0) then
             gameTime = 0
             candy = points/25
             Scene.Change("gameScoreScene3") 
@@ -206,234 +207,233 @@ function World3GameScene:draw()
             popStyle()
         end
     
-    choiceMade()
+    choiceMadeWorld3GameScene()
 end
 
 function World3GameScene:touched(touch)
     
     button0:touched(touch)
    if (button0:isTouching(value100) == true) then
-        button0.objectCurrentLocation = button0.objectStartLocation
+        button0.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 0
         userSelectedNumber = 0
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button0:isTouching(value10) == true) then
-        button0.objectCurrentLocation = button0.objectStartLocation
+        button0.objectCurrentLocation = value10.objectStartLocation
         tensValue = 0
         userSelectedNumber = 0
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button0:isTouching(value1) == true) then
-        button0.objectCurrentLocation = button0.objectStartLocation    
+        button0.objectCurrentLocation = value1.objectStartLocation    
         onesValue = 0
         userSelectedNumber = 0
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
      button1:touched(touch)
    if (button1:isTouching(value100) == true) then
-        button1.objectCurrentLocation = button1.objectStartLocation
+        button1.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 1
         userSelectedNumber = 1
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button1:isTouching(value10) == true) then
-        button1.objectCurrentLocation = button1.objectStartLocation
+        button1.objectCurrentLocation = value10.objectStartLocation
         tensValue = 1
         userSelectedNumber = 1
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button1:isTouching(value1) == true) then
-        button1.objectCurrentLocation = button1.objectStartLocation    
+        button1.objectCurrentLocation = value1.objectStartLocation    
         onesValue = 1
         userSelectedNumber = 1
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
     button2:touched(touch)
     if (button2:isTouching(value100) == true) then
-        button2.objectCurrentLocation = button2.objectStartLocation
+        button2.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 2
         userSelectedNumber = 2
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button2:isTouching(value10) == true) then
-        button2.objectCurrentLocation = button2.objectStartLocation
+        button2.objectCurrentLocation = value10.objectStartLocation
         tensValue = 2
         userSelectedNumber = 2
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button2:isTouching(value1) == true) then
-        button2.objectCurrentLocation = button2.objectStartLocation 
+        button2.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 2
         userSelectedNumber = 2
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
     button3:touched(touch)
     if (button3:isTouching(value100) == true) then
-        button3.objectCurrentLocation = button3.objectStartLocation
+        button3.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 3
         userSelectedNumber = 3
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button3:isTouching(value10) == true) then
-        button3.objectCurrentLocation = button3.objectStartLocation
+        button3.objectCurrentLocation = value10.objectStartLocation
         tensValue = 3
         userSelectedNumber = 3
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button3:isTouching(value1) == true) then
-        button3.objectCurrentLocation = button3.objectStartLocation
+        button3.objectCurrentLocation = value1.objectStartLocation
         onesValue = 3
         userSelectedNumber = 3
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
     button4:touched(touch)
    if (button4:isTouching(value100) == true) then
-        button4.objectCurrentLocation =  button4.objectStartLocation
+        button4.objectCurrentLocation =  value100.objectStartLocation
         hundredsValue = 4
         userSelectedNumber = 4
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button4:isTouching(value10) == true) then
-        button4.objectCurrentLocation = button4.objectStartLocation
+        button4.objectCurrentLocation = value10.objectStartLocation
         tensValue = 4
         userSelectedNumber = 4
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button4:isTouching(value1) == true) then
-        button4.objectCurrentLocation = button4.objectStartLocation 
+        button4.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 4
         userSelectedNumber = 4
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
       button5:touched(touch)
    if (button5:isTouching(value100) == true) then
-        button5.objectCurrentLocation = button5.objectStartLocation
+        button5.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 5
         userSelectedNumber = 5
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button5:isTouching(value10) == true) then
-        button5.objectCurrentLocation = button5.objectStartLocation
+        button5.objectCurrentLocation = value10.objectStartLocation
         tensValue = 5
         userSelectedNumber = 5
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button5:isTouching(value1) == true) then
-        button5.objectCurrentLocation = button5.objectStartLocation 
+        button5.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 5
         userSelectedNumber = 5
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
      end
 
       button6:touched(touch)
    if (button6:isTouching(value100) == true) then
-        button6.objectCurrentLocation = button6.objectStartLocation
+        button6.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 6
         userSelectedNumber = 6
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button6:isTouching(value10) == true) then
-        button6.objectCurrentLocation = button6.objectStartLocation
+        button6.objectCurrentLocation = value10.objectStartLocation
         tensValue = 6
         userSelectedNumber = 6
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button6:isTouching(value1) == true) then
-        button6.objectCurrentLocation = button6.objectStartLocation 
+        button6.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 6
         userSelectedNumber = 6
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
      button7:touched(touch)
    if (button7:isTouching(value100) == true) then
-        button7.objectCurrentLocation = button7.objectStartLocation
+        button7.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 7
         userSelectedNumber = 7
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button7:isTouching(value10) == true) then
-        button7.objectCurrentLocation = button7.objectStartLocation
+        button7.objectCurrentLocation = value10.objectStartLocation
         tensValue = 7
         userSelectedNumber = 7
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button7:isTouching(value1) == true) then
-        button7.objectCurrentLocation = button7.objectStartLocation    
+        button7.objectCurrentLocation = value1.objectStartLocation    
         onesValue = 7
         userSelectedNumber = 7
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
      button8:touched(touch)
    if (button8:isTouching(value100) == true) then
-        button8.objectCurrentLocation = button8.objectStartLocation
+        button8.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 8
         userSelectedNumber = 8
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button8:isTouching(value10) == true) then
-        button8.objectCurrentLocation = button8.objectStartLocation
+        button8.objectCurrentLocation = value10.objectStartLocation
         tensValue = 8
         userSelectedNumber = 8
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button8:isTouching(value1) == true) then
-        button8.objectCurrentLocation = button8.objectStartLocation 
+        button8.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 8
         userSelectedNumber = 8
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
       button9:touched(touch)
    if (button9:isTouching(value100) == true) then
-        button9.objectCurrentLocation = button9.objectStartLocation
+        button9.objectCurrentLocation = value100.objectStartLocation
         hundredsValue = 9
         userSelectedNumber = 9
         userSelectedValue = 100
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button9:isTouching(value10) == true) then
-        button9.objectCurrentLocation = button9.objectStartLocation
+        button9.objectCurrentLocation = value10.objectStartLocation
         tensValue = 9
         userSelectedNumber = 9
         userSelectedValue = 10
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     elseif (button9:isTouching(value1) == true) then
-        button9.objectCurrentLocation = button9.objectStartLocation 
+        button9.objectCurrentLocation = value1.objectStartLocation 
         onesValue = 9
         userSelectedNumber = 9
         userSelectedValue = 1
-        choiceMade(true)
+        choiceMadeWorld3GameScene(true)
     end
     
     home:touched(touch)  
     --hint:touched(touch)
-    
-   
+       
 
     if(home.selected == true) then
         gameTime = 0
-        points = 0
-        Scene.Change("gameMenu")
+        --points = 0
+        Scene.Change("world3")
     end
 end
 
-function choiceMade(hasAChoiceBeenMade)
+function choiceMadeWorld3GameScene(hasAChoiceBeenMade)
     -- once digit dropped, tell them how they did
     -- but we want a 1 second delay
     --Scene.Change("gameScoreScene1")
@@ -445,10 +445,10 @@ function choiceMade(hasAChoiceBeenMade)
     end
     
     if (justMadeChoice == true) then
-        if(pauseTimer + 1 < gameTime)then 
-            if (userSelectedNumber == randomNumber and userSelectedValue == randomValue) then
+        if (pauseTimer > gameTime + 0.75) then 
+            if (userSelectedNumber == (randomNumber1 - randomNumber2) and userSelectedValue == randomValue) then
                 justMadeChoice = nil
-                points = points + 10
+                points = points + 50
                 Scene.Change("gameScoreScene3")
             else
                 Scene.Change("wrongAnswerScene3")
